@@ -38,11 +38,15 @@ export class MovieComponent implements OnInit {
     })
   }
   getListByCategoy(id:number){
-    this._MovieService.listByCategory(id).subscribe({
-      next:(res:any)=>{
-        this.listMovies = res.message;
-        console.log(this.listMovies.length);
-      }
-    })
+    if(id === -1){
+      this.getListMovies();
+    }else{
+      this._MovieService.listByCategory(id).subscribe({
+        next:(res:any)=>{
+          this.listMovies = res.message;
+          console.log(this.listMovies.length);
+        }
+      })
+    }
   }
 }

@@ -1,3 +1,4 @@
-<div class="d-flex justify-content-center flex-wrap">
+<div class="d-flex justify-content-center flex-wrap" *ngIf="category.length > 0">
+        <button mat-flat-button class="m-2" color="accent" (click)="selectCategory.emit(-1)">All</button>
         <ng-container *ngFor="let list of category"><button mat-flat-button class="m-2" color="accent" (click)="selectCategory.emit(list.id)">{{list.name}}</button></ng-container>
 </div>

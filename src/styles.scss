@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('./assets/style/_style.scss');
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background: radial-gradient(26.76% 85.52% at 86.73% -12.86%,#c241ff 6.65%,#6b57ff 100%); background-attachment: fixed;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background:
+    linear-gradient(
+        rgba(41, 7, 95, 0.9),
+        rgba(41, 7, 95, 0.9)
+    ),
+    url('./assets/images/auth/bg_auth.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;}

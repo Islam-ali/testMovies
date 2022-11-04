@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/@core/authentication/service/auth.service';
 })
 export class UpdateComponent implements OnInit {
   createForm: FormGroup;
-  imageSrc = 'assets/images/auth/avatar.jpeg';
+  imageSrc = 'assets/images/movie-add.webp';
   listCategory: any[] = [];
   loading:boolean = false;
 
