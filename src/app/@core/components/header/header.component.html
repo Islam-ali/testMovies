@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <mat-toolbar-row class="container">
+        <span style="cursor: pointer;" routerLink="/">MOVIES APP</span>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="accent" routerLink="/dashboard">Dashboard</button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/auth/login" *ngIf="!isLogin">
+                <mat-icon>login</mat-icon>
+                <span>Login</span>
+            </button>
+            <button mat-menu-item routerLink="/auth/register" *ngIf="!isLogin">
+                <mat-icon>person_add</mat-icon>
+                <span>Sign Up</span>
+            </button>
+            <button mat-menu-item *ngIf="isLogin" (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

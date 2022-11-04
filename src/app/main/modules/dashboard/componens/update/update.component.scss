@@ -1,0 +1,92 @@
+.reviews {
+    min-width: 500px;
+}
+
+.blue {
+    background-color: #161d4c;
+}
+
+.orangered {
+    background-color: orangered;
+}
+
+.close.mat-button {
+    position: absolute;
+    top: -17px;
+    right: -18px;
+    padding: 5px;
+    line-height: 14px;
+    min-width: 30px;
+    border: 1px solid;
+    font-size: 21px;
+    font-weight: bold;
+    color: black !important;
+}
+
+.close.mat-button:hover {
+    background-color: #e0e6eb;
+}
+
+.book {
+    background: radial-gradient(26.76% 85.52% at 86.73% -12.86%, #c241ff 6.65%, #6b57ff 100%);
+    font-weight: bolder !important;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: none;
+    font-size: 25px;
+    font-weight: bolder;
+    width: 180px;
+    height: 50px;
+}
+
+figure {
+    width: max-content;
+    position: relative;
+}
+
+figure .form-image,
+.hover-img {
+    transition: .3s all;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+figure .hover-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+figure .hover-img p {
+    border: #fff solid 1px;
+    border-radius: 50%;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+figure:hover .hover-img {
+    opacity: .9;
+    background: radial-gradient(26.76% 85.52% at 86.73% -12.86%, #c241ff 6.65%, #6b57ff 100%);
+}
+
+:host ::ng-deep .mat-progress-spinner svg {
+    width: 25px !important;
+    height: auto !important;
+}
+
+.mat-spinner {
+    width: 30px !important;
+    height: 30px !important;
+}

@@ -1,0 +1,19 @@
+<div class="container page">
+    <section class="wrapper w-100 my-4">
+        <app-list [category]="listCategory" (selectCategory)="getListByCategoy($event)" ></app-list>
+    </section>
+    <div class="header my-4">
+        <h1>MOVIES</h1>
+    </div>
+    <section class="wrapper w-100"  *ngIf="!loading">
+        <ng-container *ngIf="listMovies.length > 0 ;else notResult">
+            <app-card *ngFor="let item of listMovies" [movie]="item"></app-card>
+        </ng-container>
+        <ng-template #notResult>
+            <app-notresult></app-notresult>
+        </ng-template>
+    </section>
+    <div class="wrapper loading w-100" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>

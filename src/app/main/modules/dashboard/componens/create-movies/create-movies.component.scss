@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    min-width: max-content;
+    width: 24%;
+  }
+  th{
+    font-size: 20px;
+    font-weight: 800;
+  }
+  img{
+    width: 120px;
+    max-height: 120px;
+    margin: 10px 0;
+  }

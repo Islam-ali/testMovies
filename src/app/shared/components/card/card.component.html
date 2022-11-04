@@ -1,0 +1,8 @@
+<div class="card">
+    <img [src]="'https://test-api.storexweb.com/'+movie.image">
+    <div class="descriptions">
+        <h1>{{movie.name}}</h1>
+        <p>{{movie.description}}</p>
+        <button type="button" [routerLink]="'/movie/'+movie.id" >More Details</button>
+    </div>
+</div>

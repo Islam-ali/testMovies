@@ -1,0 +1,89 @@
+<section class="vh-100 bg-image">
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              <div *ngIf="errorMessage" >
+                <ng-container *ngFor="let message of errorMessage | keyvalue">
+                  <p class="mat-error">{{message.value}}</p>
+                </ng-container>
+              </div>
+              <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+                <mat-form-field class="example-full-width w-100 mb-2" appearance="fill">
+                    <mat-label>first name</mat-label>
+                    <input
+                      type="text"
+                      matInput
+                      formControlName="name"
+                      name="user_name"
+                      class="mb-2"
+                      required
+                      placeholder="user name"
+                    />
+                    <mat-error *ngIf="f['name'].touched && f['name'].invalid">
+                      <mat-error *ngIf="f['name'].errors && f['name'].errors['required']">Your name is <strong>Required</strong></mat-error>
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width w-100 mb-2" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input
+                      type="email"
+                      matInput
+                      formControlName="email"
+                      name="email"
+                      class="mb-2"
+                      required
+                      email
+                      placeholder="Ex.pat@example.com"
+                    />
+                    <mat-error *ngIf="f['email'].touched && f['email'].invalid" >
+                      <mat-error *ngIf="f['email'].errors && f['email'].errors['required']">Your email is <strong>Required</strong></mat-error>
+                      <mat-error *ngIf="f['email'].errors && f['email'].errors['email']">Your email is <strong>invalid</strong> </mat-error>
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width w-100 mb-2 " appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input
+                      matInput
+                      name="password"
+                      formControlName="password"
+                      class="mb-2"
+                      required
+                      [type]="hide ? 'password' : 'text'"
+                    />
+                    <a
+                    mat-icon-button
+                    matSuffix
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide"
+                    >
+                    <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                  </a>
+                  <mat-error *ngIf="f['password'].touched && f['password'].invalid" >
+                    <mat-error *ngIf="f['password'].errors && f['password'].errors['required']">Your password is <strong>Required</strong></mat-error>
+                  </mat-error>
+                    <!-- <mat-error *ngIf="minlength == 6">password should be +6 charactar</mat-error> -->
+                  </mat-form-field>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" [disabled]="registerForm.invalid"
+                    class="btn btn-block btn-lg text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/auth/login"
+                    class="fw-bold text-body"><u style="color: #fff;">Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

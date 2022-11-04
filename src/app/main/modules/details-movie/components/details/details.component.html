@@ -1,0 +1,19 @@
+<div class="page">
+    <div class="movie_card" id="bright">
+        <div class="info_section" *ngIf="detailsMovie">
+            <div class="movie_header">
+                <img class="locandina" [src]="'https://test-api.storexweb.com/'+detailsMovie?.image" />
+                <h1>{{detailsMovie.name}}</h1>
+                <h4>{{detailsMovie.created_at | date:'yyyy/mm/dd' }}</h4>
+                <span class="minutes">{{detailsMovie.category.name}}</span>    
+                <div class="movie_desc">
+                    <p class="text" style="max-width: 60%;">
+                        {{detailsMovie.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="detailsMovie" class="blur_back"
+            [style]="'background : url(https://test-api.storexweb.com/'+detailsMovie?.image+')'"></div>
+    </div>
+</div>

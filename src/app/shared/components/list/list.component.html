@@ -1,0 +1,3 @@
+<div class="d-flex justify-content-center flex-wrap">
+        <ng-container *ngFor="let list of category"><button mat-flat-button class="m-2" color="accent" (click)="selectCategory.emit(list.id)">{{list.name}}</button></ng-container>
+</div>
