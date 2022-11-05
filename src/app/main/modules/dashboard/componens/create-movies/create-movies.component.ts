@@ -67,11 +67,10 @@ export class CreateMoviesComponent implements OnInit, OnChanges {
   deleteMovie(id: number) {
     this._MoviesService.deleteMovie(id).subscribe({
       next: (res: any) => {
-        console.log('update', res)
         this.reloadMethod.emit()
         this.toastr.error('Delete is successfully', 'success');
       },
-      error: (err: any) => { console.log(err) }
+      error: (err: any) => {  }
     })
   }
 }

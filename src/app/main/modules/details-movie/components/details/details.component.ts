@@ -18,11 +18,9 @@ export class DetailsComponent implements OnInit {
     this._ActivatedRoute.params.subscribe((prams) => {
       this._MovieService.detailsMovie(prams['id']).subscribe({
         next:(res:any)=>{
-          console.log(res);
           this.detailsMovie =res.message
         },
         error:(err:any)=>{
-          console.log(err);
         }
       })
     })

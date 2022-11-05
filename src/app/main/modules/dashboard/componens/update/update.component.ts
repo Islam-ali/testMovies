@@ -95,7 +95,6 @@ export class UpdateComponent implements OnInit {
       this._MoviesService.updateMovie(formData, this.data.item.id).subscribe({
         next: (res: any) => {
         this.loading = false;   
-          console.log('update', res)
           this.dialogRef.close('done');
           if (res.status == 'success') {
             this.toastr.success('update is successfully', res.status);

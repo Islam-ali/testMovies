@@ -14,8 +14,6 @@ export class HeaderComponent implements OnInit {
     this._AuthGuard.IsLogin.subscribe((login)=>{
       this.isLogin = login
     })
-    console.log(this.isLogin);
-    
   }
 
   ngOnInit(): void {

@@ -24,7 +24,6 @@ export class MovieComponent implements OnInit {
   getListMovies(){
     this._MovieService.listMovies().subscribe({
       next:(res:any)=>{
-        console.log(res);
         this.listMovies = res.message;
       }
     })
@@ -32,7 +31,6 @@ export class MovieComponent implements OnInit {
   getListCategoy(){
     this._MovieService.listCategory().subscribe({
       next:(res:any)=>{
-        console.log(res);
         this.listCategory = res.message;
       }
     })
@@ -44,7 +42,6 @@ export class MovieComponent implements OnInit {
       this._MovieService.listByCategory(id).subscribe({
         next:(res:any)=>{
           this.listMovies = res.message;
-          console.log(this.listMovies.length);
         }
       })
     }

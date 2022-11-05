@@ -22,7 +22,6 @@ export class IndexComponent implements OnInit {
   getListMovies() {
     this._MovieService.listMovies().subscribe({
       next: (res: any) => {
-        console.log(res);
         this.listMovies = res.message;
       }
     })

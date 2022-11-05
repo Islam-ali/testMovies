@@ -28,9 +28,7 @@ export class RegisterComponent implements OnInit {
   register(){
     if(this.registerForm.invalid){return}
     this._AuthService.register(this.registerForm.value).subscribe({
-      next:(data:any)=>{
-        console.log(data);
-        
+      next:(data:any)=>{        
         if(data.status == "success"){
           localStorage.setItem('token',data.authorisation.token)
           this._Router.navigateByUrl("/")
@@ -39,7 +37,7 @@ export class RegisterComponent implements OnInit {
           this.errorMessage = data.message
         }
       },
-      error(err:any){console.log(err)}
+      error(err:any){}
   })
   }
 
