@@ -24,7 +24,8 @@ export class AuthInterceptor implements HttpInterceptor {
   //  }
    return next.handle(authreq).pipe(
     catchError(errordata => {
-      if (errordata.status === 401) {
+      console.log('errrrrr',errordata);
+      if (errordata.status === 401 && errordata.error.message == "you are not authenticated") {
           this._AuthService.logout()
       }
       return throwError(() => errordata);
